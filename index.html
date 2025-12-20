@@ -1,21 +1,590 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Veerchem Enterprise - Chemical Solvent Trading & Supply</title>
-    <meta name="description" content="Veerchem Enterprise - Reliable source for recycled and pure industrial solvents across India. Chemical solvent trading and supply based in Ahmedabad." />
-    <meta name="keywords" content="chemical solvents, industrial solvents, recycled solvents, Ahmedabad, chemical trading, IPA, Acetone, Toluene, Ethyl Acetate, DMF, THF" />
-    <meta property="og:title" content="Veerchem Enterprise - Strength in Every Molecule" />
-    <meta property="og:description" content="Leading chemical solvent trading company in Ahmedabad. Supplying recycled and pure industrial solvents across India." />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Veerchem Enterprise - Chemical Solutions" />
-    <meta name="twitter:description" content="Reliable source for recycled & pure solvents across India" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+    <meta name="description" content="Veerchem Enterprise - Reliable source for recycled and pure industrial solvents across India. Chemical solvent trading and supply based in Ahmedabad.">
+    <meta name="keywords" content="chemical solvents, industrial solvents, recycled solvents, Ahmedabad, chemical trading, IPA, Acetone, Toluene, Ethyl Acetate, DMF, THF">
+    <meta property="og:title" content="Veerchem Enterprise - Strength in Every Molecule">
+    <meta property="og:description" content="Leading chemical solvent trading company in Ahmedabad. Supplying recycled and pure industrial solvents across India.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Veerchem Enterprise - Chemical Solutions">
+    <meta name="twitter:description" content="Reliable source for recycled & pure solvents across India">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo" onclick="navigateToPage('home')">
+                <img src="./public/veerchem_enterprise_final_one_.png" alt="Veerchem Enterprise" class="logo-img">
+                <div class="logo-text">
+                    <span class="company-name">VEERCHEM ENTERPRISE</span>
+                    <span class="company-tag">CHEMICAL SOLUTIONS</span>
+                </div>
+            </div>
+
+            <div class="nav-menu" id="navMenu">
+                <button class="nav-link" data-page="home" onclick="navigateToPage('home')">Home</button>
+                <button class="nav-link" data-page="about" onclick="navigateToPage('about')">About Us</button>
+                <button class="nav-link" data-page="products" onclick="navigateToPage('products')">Products</button>
+                <button class="nav-link" data-page="industries" onclick="navigateToPage('industries')">Industries</button>
+                <button class="nav-link" data-page="why-us" onclick="navigateToPage('why-us')">Why Choose Us</button>
+                <button class="nav-link" data-page="contact" onclick="navigateToPage('contact')">Contact</button>
+            </div>
+
+            <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- HOME PAGE -->
+        <section class="page" id="home-page" data-page="home">
+            <div class="hero">
+                <div class="hero-content">
+                    <h1 class="hero-title">Strength in Every <span class="highlight">Molecule</span></h1>
+                    <p class="hero-subtitle">Reliable Source for Recycled & Pure Solvents Across India</p>
+                    <p class="hero-description">Premium chemical solutions delivered with precision and consistency</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" onclick="navigateToPage('products')">View Products</button>
+                        <button class="btn btn-secondary" onclick="navigateToPage('contact')">Get Quote</button>
+                    </div>
+                    <div class="pan-india">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        <span>Pan-India Supply Network</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="features-section">
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🛡️</div>
+                        <h3>Quality Assured</h3>
+                        <p>GC purity analysis for all recycled solvents ensuring consistent quality standards</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🚚</div>
+                        <h3>Reliable Delivery</h3>
+                        <p>Strong logistics network ensuring on-time delivery across all regions of India</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📈</div>
+                        <h3>Cost-Effective</h3>
+                        <p>Competitive pricing with flexible packaging options tailored to your requirements</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <h2>Trusted by Industries Across India</h2>
+                <p>Serving pharmaceutical, paints, dyes, adhesives, printing, and industrial sectors with excellence</p>
+                <button class="btn btn-primary" onclick="navigateToPage('industries')">Explore Industries We Serve</button>
+            </div>
+        </section>
+
+        <!-- ABOUT PAGE -->
+        <section class="page" id="about-page" data-page="about" style="display: none;">
+            <div class="page-header">
+                <h1>About <span class="highlight">Veerchem Enterprise</span></h1>
+                <div class="header-line"></div>
+                <p>Leading chemical solvent trading and supply company based in Ahmedabad, Gujarat</p>
+            </div>
+
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Our Story</h2>
+                    <div class="about-paragraphs">
+                        <p>Veerchem Enterprise is a chemical solvent trading and supply company based in Ahmedabad, specializing in recycled and pure industrial solvents.</p>
+                        <p>We are committed to delivering consistent quality, competitive pricing, and reliable logistics support across India. Our expertise lies in providing cost-effective alternatives without compromising on quality standards.</p>
+                        <p>With a customer-centric approach and strong industry relationships, we have established ourselves as a trusted partner for businesses seeking reliable chemical solvent solutions.</p>
+                    </div>
+                </div>
+
+                <div class="about-cards">
+                    <div class="about-card">
+                        <div class="card-icon">🏢</div>
+                        <h3>Based in Ahmedabad</h3>
+                        <p>Strategic location for pan-India distribution</p>
+                    </div>
+                    <div class="about-card">
+                        <div class="card-icon">🎯</div>
+                        <h3>Specialized Focus</h3>
+                        <p>Recycled & pure industrial solvents</p>
+                    </div>
+                    <div class="about-card">
+                        <div class="card-icon">🏆</div>
+                        <h3>Quality First</h3>
+                        <p>GC purity tested products</p>
+                    </div>
+                    <div class="about-card">
+                        <div class="card-icon">👥</div>
+                        <h3>Customer-Centric</h3>
+                        <p>Long-term partnership approach</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="values-section">
+                <h2>Our Core Values</h2>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="value-number">1</div>
+                        <h3>Integrity</h3>
+                        <p>Transparent business practices and honest communication with every client</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-number">2</div>
+                        <h3>Quality</h3>
+                        <p>Rigorous testing and quality control to ensure consistent product standards</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-number">3</div>
+                        <h3>Reliability</h3>
+                        <p>Dependable supply chain and on-time delivery across India</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRODUCTS PAGE -->
+        <section class="page" id="products-page" data-page="products" style="display: none;">
+            <div class="page-header">
+                <h1>Our <span class="highlight">Products</span></h1>
+                <div class="header-line"></div>
+                <p>Comprehensive range of recycled and pure industrial solvents for diverse applications</p>
+            </div>
+
+            <div class="products-highlights">
+                <div class="product-highlight">
+                    <div class="highlight-icon">⚗️</div>
+                    <h3>GC Tested</h3>
+                    <p>Quality assured through purity analysis</p>
+                </div>
+                <div class="product-highlight">
+                    <div class="highlight-icon">📦</div>
+                    <h3>Flexible Packaging</h3>
+                    <p>Available as per customer requirement</p>
+                </div>
+                <div class="product-highlight">
+                    <div class="highlight-icon">✓</div>
+                    <h3>Consistent Supply</h3>
+                    <p>Reliable inventory management</p>
+                </div>
+            </div>
+
+            <div class="products-table-container">
+                <table class="products-table">
+                    <thead>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Category</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Isopropyl Alcohol (IPA)</td><td>Alcohols</td></tr>
+                        <tr><td>Acetone</td><td>Ketones</td></tr>
+                        <tr><td>Toluene</td><td>Aromatic Hydrocarbons</td></tr>
+                        <tr><td>Ethyl Acetate</td><td>Esters</td></tr>
+                        <tr><td>Dimethylformamide (DMF)</td><td>Amides</td></tr>
+                        <tr><td>Tetrahydrofuran (THF)</td><td>Ethers</td></tr>
+                        <tr><td>Acetonitrile (ACN)</td><td>Nitriles</td></tr>
+                        <tr><td>Paint Thinner / Mix Solvent</td><td>Thinners</td></tr>
+                        <tr><td>Ink Reducer</td><td>Specialty Solvents</td></tr>
+                        <tr><td>NBA</td><td>Specialty Solvents</td></tr>
+                        <tr><td>MIBK</td><td>Ketones</td></tr>
+                        <tr><td>PU Thinner (Sample-Based Manufacturing)</td><td>Thinners</td></tr>
+                        <tr><td>Propionic Acid</td><td>Acids</td></tr>
+                        <tr><td>Acetic Acid</td><td>Acids</td></tr>
+                        <tr><td>Mix Xylene</td><td>Aromatic Hydrocarbons</td></tr>
+                        <tr><td>Ortho Xylene</td><td>Aromatic Hydrocarbons</td></tr>
+                        <tr><td>N Heptane</td><td>Aliphatic Hydrocarbons</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="packaging-note">
+                <p><strong>Packaging options available as per customer requirement.</strong></p>
+            </div>
+
+            <div class="cta-section">
+                <p>Need a specific solvent or custom formulation?</p>
+                <button class="btn btn-primary" onclick="navigateToPage('contact')">Request a Quote</button>
+            </div>
+        </section>
+
+        <!-- INDUSTRIES PAGE -->
+        <section class="page" id="industries-page" data-page="industries" style="display: none;">
+            <div class="page-header">
+                <h1>Industries <span class="highlight">We Serve</span></h1>
+                <div class="header-line"></div>
+                <p>Providing chemical solvent solutions across diverse industrial sectors throughout India</p>
+            </div>
+
+            <div class="industries-grid">
+                <div class="industry-card">
+                    <div class="industry-icon">💊</div>
+                    <h3>Pharmaceutical Manufacturing</h3>
+                    <p>High-purity solvents for API synthesis, extraction processes, and laboratory applications</p>
+                    <div class="applications">
+                        <strong>Key Applications:</strong>
+                        <ul>
+                            <li>API Synthesis</li>
+                            <li>Extraction</li>
+                            <li>Purification</li>
+                            <li>Analytical Testing</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="industry-card">
+                    <div class="industry-icon">💧</div>
+                    <h3>Paints & Coatings</h3>
+                    <p>Quality solvents for formulation, thinning, and surface preparation applications</p>
+                    <div class="applications">
+                        <strong>Key Applications:</strong>
+                        <ul>
+                            <li>Paint Thinning</li>
+                            <li>Coating Formulation</li>
+                            <li>Surface Cleaning</li>
+                            <li>Viscosity Control</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="industry-card">
+                    <div class="industry-icon">🎨</div>
+                    <h3>Dyes & Pigments</h3>
+                    <p>Specialized solvents for dye dissolution, dispersion, and color formulation</p>
+                    <div class="applications">
+                        <strong>Key Applications:</strong>
+                        <ul>
+                            <li>Dye Dissolution</li>
+                            <li>Color Mixing</li>
+                            <li>Pigment Dispersion</li>
+                            <li>Textile Processing</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="industry-card">
+                    <div class="industry-icon">🔗</div>
+                    <h3>Adhesives & Resins</h3>
+                    <p>Reliable solvents for adhesive formulation and resin processing</p>
+                    <div class="applications">
+                        <strong>Key Applications:</strong>
+                        <ul>
+                            <li>Adhesive Manufacturing</li>
+                            <li>Resin Dilution</li>
+                            <li>Viscosity Adjustment</li>
+                            <li>Cleanup</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="industry-card">
+                    <div class="industry-icon">🖨️</div>
+                    <h3>Printing Inks</h3>
+                    <p>Premium ink reducers and solvents for printing industry applications</p>
+                    <div class="applications">
+                        <strong>Key Applications:</strong>
+                        <ul>
+                            <li>Ink Reduction</li>
+                            <li>Viscosity Control</li>
+                            <li>Equipment Cleaning</li>
+                            <li>Formulation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="industry-card">
+                    <div class="industry-icon">🏭</div>
+                    <h3>General Industrial Cleaning</h3>
+                    <p>Effective cleaning solvents for industrial equipment and surface degreasing</p>
+                    <div class="applications">
+                        <strong>Key Applications:</strong>
+                        <ul>
+                            <li>Equipment Cleaning</li>
+                            <li>Degreasing</li>
+                            <li>Parts Washing</li>
+                            <li>Surface Preparation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="industries-cta">
+                <h2>Your Industry Not Listed?</h2>
+                <p>We work with various industrial sectors. Contact us to discuss your specific solvent requirements.</p>
+                <div class="custom-solutions-box">
+                    <p>Custom solutions available for specialized industrial applications</p>
+                    <p style="color: #fbbf24; font-weight: 600; margin-top: 1rem;">Let's discuss your requirements</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHY US PAGE -->
+        <section class="page" id="why-us-page" data-page="why-us" style="display: none;">
+            <div class="page-header">
+                <h1>Why Choose <span class="highlight">Veerchem Enterprise</span></h1>
+                <div class="header-line"></div>
+                <p>Your trusted partner for quality chemical solvents with unmatched service and reliability</p>
+            </div>
+
+            <div class="why-us-grid">
+                <div class="why-us-card">
+                    <div class="card-icon">🏆</div>
+                    <h3>Consistent Quality</h3>
+                    <p style="color: #fbbf24;">Recycled solvents tested with GC purity analysis</p>
+                    <ul class="details-list">
+                        <li>Advanced GC testing for every batch</li>
+                        <li>Stringent quality control protocols</li>
+                        <li>Consistent purity standards maintained</li>
+                        <li>Regular laboratory analysis and documentation</li>
+                    </ul>
+                </div>
+
+                <div class="why-us-card">
+                    <div class="card-icon">💰</div>
+                    <h3>Competitive Pricing</h3>
+                    <p style="color: #fbbf24;">Cost-effective alternatives to fresh solvents</p>
+                    <ul class="details-list">
+                        <li>Market-competitive rates</li>
+                        <li>Volume-based pricing options</li>
+                        <li>Cost savings without compromising quality</li>
+                        <li>Transparent pricing structure</li>
+                    </ul>
+                </div>
+
+                <div class="why-us-card">
+                    <div class="card-icon">📦</div>
+                    <h3>Flexible Packaging</h3>
+                    <p style="color: #fbbf24;">As per customer requirement</p>
+                    <ul class="details-list">
+                        <li>Customizable packaging sizes</li>
+                        <li>Standard drums and containers available</li>
+                        <li>Bulk supply options</li>
+                        <li>Safe and compliant packaging materials</li>
+                    </ul>
+                </div>
+
+                <div class="why-us-card">
+                    <div class="card-icon">🚚</div>
+                    <h3>On-Time Delivery</h3>
+                    <p style="color: #fbbf24;">Strong logistics network across India</p>
+                    <ul class="details-list">
+                        <li>Pan-India distribution network</li>
+                        <li>Reliable transportation partnerships</li>
+                        <li>Order tracking and updates</li>
+                        <li>Timely delivery commitments</li>
+                    </ul>
+                </div>
+
+                <div class="why-us-card">
+                    <div class="card-icon">🤝</div>
+                    <h3>Customer-Centric</h3>
+                    <p style="color: #fbbf24;">Long-term partnership approach</p>
+                    <ul class="details-list">
+                        <li>Dedicated customer support</li>
+                        <li>Flexible payment terms</li>
+                        <li>Technical consultation available</li>
+                        <li>Building lasting business relationships</li>
+                    </ul>
+                </div>
+
+                <div class="why-us-card">
+                    <div class="card-icon">🔬</div>
+                    <h3>Technical Expertise</h3>
+                    <p style="color: #fbbf24;">In-depth knowledge of chemical solvents</p>
+                    <ul class="details-list">
+                        <li>Expert product recommendations</li>
+                        <li>Application-specific guidance</li>
+                        <li>Sample testing support</li>
+                        <li>Quality documentation provided</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="commitment-section">
+                <h2>Our Commitment to Excellence</h2>
+                <div class="commitment-grid">
+                    <div class="commitment-card">
+                        <div class="commitment-number">100%</div>
+                        <p>Quality Tested</p>
+                    </div>
+                    <div class="commitment-card">
+                        <div class="commitment-number">24/7</div>
+                        <p>Customer Support</p>
+                    </div>
+                    <div class="commitment-card">
+                        <div class="commitment-number">Pan-India</div>
+                        <p>Supply Network</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="final-cta">
+                <h2>Experience the Veerchem Difference</h2>
+                <p>Partner with us for reliable, cost-effective, and quality chemical solvent solutions</p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary" onclick="navigateToPage('contact')">Request a Quote</button>
+                    <button class="btn btn-secondary" onclick="document.location.href='tel:+918849424398'">Call Us Now</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT PAGE -->
+        <section class="page" id="contact-page" data-page="contact" style="display: none;">
+            <div class="page-header">
+                <h1>Contact <span class="highlight">Us</span></h1>
+                <div class="header-line"></div>
+                <p>Get in touch for quotes, inquiries, or partnership opportunities</p>
+            </div>
+
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2>Get in Touch</h2>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">👤</div>
+                        <div>
+                            <h3>Contact Person</h3>
+                            <p>Harshal Patel</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">📞</div>
+                        <div>
+                            <h3>Phone / WhatsApp</h3>
+                            <a href="tel:+918849424398">+91-8849424398</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">📧</div>
+                        <div>
+                            <h3>Email</h3>
+                            <a href="mailto:info@veerchementerprise.in">info@veerchementerprise.in</a>
+                            <a href="mailto:harshalpt25@gmail.com" style="font-size: 0.875rem; color: #9ca3af;">harshalpt25@gmail.com</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <h3>Office Address</h3>
+                            <p>B-503, Amrapali Lakeview,<br>Vastrapur Lake,<br>Ahmedabad, Gujarat, India</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-container">
+                    <h2>Send us a Message</h2>
+                    <form id="contactForm" onsubmit="handleFormSubmit(event)">
+                        <div id="formMessage" class="form-message" style="display: none;"></div>
+
+                        <div class="form-group">
+                            <label for="name">Your Name *</label>
+                            <input type="text" id="name" name="name" required placeholder="Enter your name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required placeholder="your@email.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="+91-XXXXXXXXXX">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="company">Company Name</label>
+                            <input type="text" id="company" name="company" placeholder="Your company">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <input type="text" id="subject" name="subject" required placeholder="What is your inquiry about?">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" required rows="5" placeholder="Tell us about your requirements..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block">Send Inquiry</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="footer-cta">
+                <div class="footer-cta-icon">🏢</div>
+                <h2>Veerchem Enterprise</h2>
+                <p>Your trusted partner for chemical solvent solutions across India</p>
+                <div class="footer-cta-location">
+                    📍 Based in Ahmedabad, Serving Pan-India
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="./public/veerchem_enterprise_final_one_.png" alt="Veerchem Enterprise" class="footer-logo-img">
+                    <div>
+                        <div class="footer-company-name">VEERCHEM ENTERPRISE</div>
+                        <div class="footer-company-tag">CHEMICAL SOLUTIONS</div>
+                    </div>
+                </div>
+                <p class="footer-description">Leading chemical solvent trading company specializing in recycled and pure industrial solvents across India.</p>
+                <div class="footer-network">📍 Pan-India Supply Network</div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><button onclick="navigateToPage('home')" class="footer-link">Home</button></li>
+                    <li><button onclick="navigateToPage('about')" class="footer-link">About Us</button></li>
+                    <li><button onclick="navigateToPage('products')" class="footer-link">Products</button></li>
+                    <li><button onclick="navigateToPage('industries')" class="footer-link">Industries</button></li>
+                    <li><button onclick="navigateToPage('why-us')" class="footer-link">Why Choose Us</button></li>
+                    <li><button onclick="navigateToPage('contact')" class="footer-link">Contact</button></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li><a href="tel:+918849424398" class="footer-contact-link">📞 +91-8849424398</a></li>
+                    <li><a href="mailto:info@veerchementerprise.in" class="footer-contact-link">✉️ info@veerchementerprise.in</a></li>
+                    <li><span class="footer-contact-link">📍 Ahmedabad, Gujarat, India</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; <span id="currentYear"></span> Veerchem Enterprise. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/918849424398?text=Hello%20Veerchem%20Enterprise,%20I%20would%20like%20to%20inquire%20about%20your%20products." target="_blank" class="whatsapp-button" title="Chat with us on WhatsApp">
+        <span class="whatsapp-icon">💬</span>
+        <span class="whatsapp-tooltip">Chat with us on WhatsApp</span>
+    </a>
+
+    <script src="./script.js"></script>
+</body>
 </html>
