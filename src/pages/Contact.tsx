@@ -17,12 +17,16 @@ export default function Contact() {
   const form = e.currentTarget;
   const formData = new FormData(form);
 
-  await fetch("https://formsubmit.co/info@veerchementerprise.in", {
-    method: "POST",
-    body: formData,
-  });
+  try {
+    await fetch("https://formsubmit.co/info@veerchementerprise.in", {
+      method: "POST",
+      body: formData,
+      mode: "no-cors",
+    });
+  } catch (e) {
+    // ignore errors
+  }
 
-  // ✅ THIS IS THE KEY LINE
   window.location.href = "/thank-you.html";
 };
 
