@@ -13,7 +13,8 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
   e.preventDefault();
-
+  alert("React submit intercepted");
+    
   const form = e.currentTarget;
   const formData = new FormData(form);
 
