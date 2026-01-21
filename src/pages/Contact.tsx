@@ -13,28 +13,7 @@ export default function Contact() {
 
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-  e.preventDefault();
-
-  const form = e.currentTarget;
-  const formDataToSend = new FormData(form);
-
-  formDataToSend.append("_subject", "New Inquiry from Veerchem Website");
-  formDataToSend.append("_cc", "harshalpt25@gmail.com");
-  formDataToSend.append("_captcha", "false");
-  formDataToSend.append("_template", "table");
-
-  try {
-    await fetch("https://formsubmit.co/info@veerchementerprise.in", {
-      method: "POST",
-      body: formDataToSend,
-    });
-
-    window.location.href = "/thank-you.html";
-  } catch (error) {
-    alert("Something went wrong. Please try again later.");
-  }
-};
+  
 
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -131,7 +110,12 @@ export default function Contact() {
             <div>
               <h2 className="text-3xl font-bold text-white mb-8">Send us a Message</h2>
 
-              <form onSubmit={handleSubmit} className="bg-gray-800 border border-gray-700 rounded-lg p-8">
+              <form
+  action="https://formsubmit.co/info@veerchementerprise.in"
+  method="POST"
+  className="bg-gray-800 border border-gray-700 rounded-lg p-8"
+>
+
                 {submitted && (
                   <div className="bg-yellow-400 text-black p-4 rounded-lg mb-6 font-semibold">
                     Thank you! We'll get back to you soon.
@@ -215,7 +199,12 @@ export default function Contact() {
                       placeholder="Tell us about your requirements..."
                     ></textarea>
                   </div>
-
+                  {/* FormSubmit hidden fields */}
+                  <input type="hidden" name="_subject" value="New Inquiry from Veerchem Website" />
+                  <input type="hidden" name="_cc" value="harshalpt25@gmail.com" />
+                  <input type="hidden" name="_captcha" value="false" />
+                  <input type="hidden" name="_template" value="table" />
+                  <input type="hidden" name="_next" value="thank-you.html" />
                   <button
                     type="submit"
                     className="w-full bg-yellow-400 text-black py-4 rounded-lg font-bold text-lg hover:bg-yellow-300 transition-all flex items-center justify-center gap-2"
