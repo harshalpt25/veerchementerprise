@@ -204,7 +204,11 @@ export default function Contact() {
                   <input type="hidden" name="_cc" value="harshalpt25@gmail.com" />
                   <input type="hidden" name="_captcha" value="false" />
                   <input type="hidden" name="_template" value="table" />
-                  <input type="hidden" name="_next" value="thank-you.html" />
+                  <input
+                   type="hidden"
+                   name="_next"
+                   value="https://veerchementerprise.in/thank-you.html"
+                  />
                   <button
                     type="submit"
                     className="w-full bg-yellow-400 text-black py-4 rounded-lg font-bold text-lg hover:bg-yellow-300 transition-all flex items-center justify-center gap-2"
