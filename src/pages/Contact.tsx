@@ -11,11 +11,6 @@ export default function Contact() {
     message: ''
   });
 
-  const [submitted, setSubmitted] = useState(false);
-
-  
-
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
@@ -116,12 +111,7 @@ export default function Contact() {
   className="bg-gray-800 border border-gray-700 rounded-lg p-8"
 >
 
-                {submitted && (
-                  <div className="bg-yellow-400 text-black p-4 rounded-lg mb-6 font-semibold">
-                    Thank you! We'll get back to you soon.
-                  </div>
-                )}
-
+      
                 <div className="space-y-6">
                   <div>
                     <label className="block text-gray-300 font-medium mb-2">Your Name *</label>
