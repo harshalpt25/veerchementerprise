@@ -13,21 +13,29 @@ export default function Contact() {
 
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        company: '',
-        subject: '',
-        message: ''
-      });
-    }, 3000);
-  };
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+
+  const form = e.currentTarget;
+  const formDataToSend = new FormData(form);
+
+  formDataToSend.append("_subject", "New Inquiry from Veerchem Website");
+  formDataToSend.append("_cc", "harshalpt25@gmail.com");
+  formDataToSend.append("_captcha", "false");
+  formDataToSend.append("_template", "table");
+
+  try {
+    await fetch("https://formsubmit.co/info@veerchementerprise.in", {
+      method: "POST",
+      body: formDataToSend,
+    });
+
+    window.location.href = "/thank-you.html";
+  } catch (error) {
+    alert("Something went wrong. Please try again later.");
+  }
+};
+
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
